@@ -1,3 +1,6 @@
 [submodule "classifier/textclassifier"]
 	path = classifier/textclassifier
 	url = git@github.com:santiagofdezg/textclassifier.git
+[submodule "search/searchengine"]
+	path = search/searchengine
+	url = git@github.com:santiagofdezg/searchengine.git
