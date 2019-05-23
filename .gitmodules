@@ -1,0 +1,3 @@
+[submodule "classifier/textclassifier"]
+	path = classifier/textclassifier
+	url = git@github.com:santiagofdezg/textclassifier.git
