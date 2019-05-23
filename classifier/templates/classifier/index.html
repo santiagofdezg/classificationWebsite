@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="mx-5 my-5">
+        <!-- SAVED MODEL -->
+        <form action="." method="POST"> {% csrf_token %}
+            <div class="row align-items-center">
+                <div class="col-sm-12 pt-1 text-dark">
+                    <h3><u>Saved Model</u></h3>
+                </div>
+
+                <div class="col-sm-3">
+                    {{ formTrained.savedModel }}
+                    {% if formTrained.savedModel.errors %}
+                            <div class="alert alert-danger" role="alert">
+                                {{ formTrained.savedModel.errors }}
+                            </div>
+                    {% endif %}
+                </div>
+                <div class="col-sm-7">
+                    <div class="form-group">
+                        <label for="{{ formTrained.textClassify.id_for_label }}">Text to classify:</label>
+                        {{ formTrained.textClassify }}
+                        {% if formTrained.textClassify.errors %}
+                            <div class="alert alert-danger" role="alert">
+                                {{ formTrained.textClassify.errors }}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    {{ formTrained.choice }}
+                    <button type="submit" name="trainedModel" class="btn btn-light rounded-pill">Classify</button>
+                </div>
+            </div>
+
+        </form>
+        <!-- ################## -->
+
+        <!-- TRAIN NEW MODEL -->
+        <form action="." method="POST"> {% csrf_token %}
+            <div class="row justify-content-end">
+                <div class="col-sm-12 pt-3 text-dark">
+                    <h3><u>Train New Model</u></h3>
+                </div>
+                <div class="col-sm-4">
+                    {{ formNew.dataset }}
+                    {% if formNew.dataset.errors %}
+                            <div class="alert alert-danger" role="alert">
+                                {{ formNew.dataset.errors }}
+                            </div>
+                    {% endif %}
+                </div>
+                <div class="col-sm-4">
+                    {{ formNew.param_alg }}
+                    {% if formNew.param_alg.errors %}
+                            <div class="alert alert-danger" role="alert">
+                                {{ formNew.param_alg.errors }}
+                            </div>
+                    {% endif %}
+                </div>
+                <div class="col-sm-4">
+                    {{ formNew.classif_alg }}
+                    {% if formNew.classif_alg.errors %}
+                            <div class="alert alert-danger" role="alert">
+                                {{ formNew.classif_alg.errors }}
+                            </div>
+                    {% endif %}
+                </div>
+                <div class="col-sm-12">
+                    <label for="{{ formNew.percentage.id_for_label }}">% training set</label>
+                    {{ formNew.percentage }}
+                    {% if formNew.percentage.errors %}
+                            <div class="alert alert-danger" role="alert">
+                                {{ formNew.percentage.errors }}
+                            </div>
+                    {% endif %}
+                </div>
+                <div class="col-sm-3">
+                    {{ formNew.choice }}
+                    <button type="submit" class="btn btn-light rounded-pill">Train New Model</button>
+                </div>
+            </div>
+        </form>
+        <!-- ################## -->
+
+        <!-- TRAIN ALL MODELS -->
+        <form action="." method="POST"> {% csrf_token %}
+            <div class="row">
+                <div class="col-sm-12 pt-3 text-dark">
+                    <h3><u>Train All Possible Models</u></h3>
+                </div>
+                <div class="col-sm-4">
+                    {{ formAll.dataset }}
+                    {% if formAll.dataset.errors %}
+                            <div class="alert alert-danger" role="alert">
+                                {{ formAll.dataset.errors }}
+                            </div>
+                    {% endif %}
+                </div>
+                <div class="col-sm-5">
+                    <label for="{{ formAll.percentage.id_for_label }}">% training set</label>
+                    {{ formAll.percentage }}
+                    {% if formAll.percentage.errors %}
+                            <div class="alert alert-danger" role="alert">
+                                {{ formAll.percentage.errors }}
+                            </div>
+                    {% endif %}
+                </div>
+                <div class="col-sm-3">
+                    {{ formAll.choice }}
+                    <button type="submit" class="btn btn-light rounded-pill">Train all</button>
+                </div>
+            </div>
+        </form>
+        <!-- ################## -->
+    </div>
+</div>
+
+
+{% endblock %}

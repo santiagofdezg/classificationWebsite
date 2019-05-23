@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="mx-5 my-5">
+            <h1 class="text-dark"><u>Classification results</u></h1>
+            <div class="mx-4 my-5">
+                <h4>Model:</h4>
+                <p>{{ model.name }}</p>
+
+                <h4>Text to classify:</h4>
+                <p>{{ text }}</p>
+
+                <h4>Topics:</h4>
+                <p>{{ topics }}</p>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

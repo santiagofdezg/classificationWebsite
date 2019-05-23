@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Text Classifier</title>
+    {% load static %}
+    <link rel="shortcut icon" href="{% static 'classifier/images/favicon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'website/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/fontawesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
+    {% block head_content %}
+
+    {% endblock head_content %}
+</head>
+<body>
+
+    {% include 'navbar.html' %}
+
+    {% block content %}
+
+
+    {% endblock content %}
+
+<script src="{% static 'website/js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'website/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'website/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'website/js/sweetalert2.all.min.js' %}"></script>
+<!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+
+</body>
+</html>

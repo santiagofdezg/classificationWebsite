@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="mx-5 my-5">
+            <h1 class="text-dark"><u>Model training results</u></h1>
+            <div class="mx-4 my-5">
+                <h4>Parameterization algorithm:</h4>
+                <p>{{ param_alg }}</p>
+                <h4>Classification algorithm:</h4>
+                <p>{{ classif_alg }}</p>
+                <h4>Dataset:</h4>
+                <p>{{ dataset }}</p>
+                <h4>% training set:</h4>
+                <p>{{ percentage }}</p>
+
+                <h4>Accuracy:</h4>
+                <p>{{ accuracy }}%</p>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

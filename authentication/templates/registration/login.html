@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block head_content %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'authentication/css/style.css' %}">
+{% endblock head_content %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row text-dark">
+            <div class="absolute-center is-responsive">
+                <div class="col-sm-12 col-md-10 col-md-offset-1">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Login</h3>
+                        </div>
+                        <div class="card-body text-center">
+                            <form method="post"> {% csrf_token %}
+                                {{ form.as_p }}
+                                <button type="submit">Login</button>
+                            </form>
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-flex justify-content-center links">
+                                Don't have an account?<a href="#" id="register-user">Register</a>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <a href="#" id="forgot-pass">Forgot your password?</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var trees = "{% static "authentication/images/trees.png" %}"
+        var nyanCat = "{% static "authentication/images/nyan-cat.gif" %}"
+    </script>
+
+    <script src="{% static 'authentication/js/alerts.js' %}"></script>
+
+{% endblock content %}
