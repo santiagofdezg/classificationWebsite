@@ -25,10 +25,9 @@ urlpatterns = [
     # path('home/', home_view, name='home'),
 
     path('', home_view, name='home'),
-    path('classifier/', include('classifier.urls')),
     path('authentication/', include('authentication.urls')),
+    path('classifier/', include('classifier.urls')),
+    path('search/', include('search.urls'))
 
-    # path('training/', training_view, name='training'),
-    # path('classify/', classify_view, name='home'),
     # path('documentation/', documentation_view, name='home'),
 ]

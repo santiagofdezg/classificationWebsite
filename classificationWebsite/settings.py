@@ -43,8 +43,9 @@ INSTALLED_APPS = [
     # third party
 
     # own
-    'classifier',
     'authentication',
+    'classifier',
+    'search',
 ]
 
 MIDDLEWARE = [

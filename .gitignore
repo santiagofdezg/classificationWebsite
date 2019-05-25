@@ -4,3 +4,4 @@ classifier/__pycache__/
 classifier/migrations/__pycache__/
 authentication/__pycache__/
 authentication/migrations/__pycache__/
+__pycache__/
