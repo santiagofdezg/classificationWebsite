@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="mx-5 my-5">
+        <form action="." method="POST"> {% csrf_token %}
+            <!-- FIRST ROW -->
+            <div class="row align-items-center my-2">
+                <div class="col-sm-12 pt-1 text-dark">
+                    <h3><u>News Searcher</u></h3>
+                </div>
+
+                <div class="col-sm-10">
+                    {{ form.searchBar }}
+                    {% if form.searchBar.errors %}
+                            <div class="alert alert-danger" role="alert">
+                                {{ form.searchBar.errors }}
+                            </div>
+                    {% endif %}
+                </div>
+                <div class="col-sm-2">
+                    <button type="submit" class="btn btn-light rounded-pill">Search</button>
+                </div>
+            </div>
+
+            <!-- SECOND ROW -->
+            <div class="row align-items-center my-1">
+                <div class="col-sm-2">
+                    <label for="{{ form.category.id_for_label }}">Category:</label>
+                    {{ form.category }}
+                    {% if form.category.errors %}
+                            <div class="alert alert-danger" role="alert">
+                                {{ form.category.errors }}
+                            </div>
+                    {% endif %}
+                </div>
+                <div class="col-sm-2">
+                    <label for="{{ form.source.id_for_label }}">Source:</label>
+                    {{ form.source }}
+                    {% if form.source.errors %}
+                            <div class="alert alert-danger" role="alert">
+                                {{ form.source.errors }}
+                            </div>
+                    {% endif %}
+                </div>
+                <div class="col-sm-2">
+                    <label for="{{ form.interval.id_for_label }}">Time interval:</label>
+                    {{ form.interval }}
+                    {% if form.interval.errors %}
+                            <div class="alert alert-danger" role="alert">
+                                {{ form.interval.errors }}
+                            </div>
+                    {% endif %}
+                </div>
+                <div class="col-sm-2">
+                    <label for="{{ form.maxArticles.id_for_label }}">Max. articles:</label>
+                    {{ form.maxArticles }}
+                    {% if form.maxArticles.errors %}
+                            <div class="alert alert-danger" role="alert">
+                                {{ form.maxArticles.errors }}
+                            </div>
+                    {% endif %}
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}
