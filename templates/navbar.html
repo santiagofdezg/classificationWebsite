@@ -13,6 +13,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item"><a class="nav-link" href="{% url 'classifier:index' %}">Classifier</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'search:index' %}">Search news</a></li>
             </ul>
         </div>
 
@@ -24,7 +25,7 @@
                         {% if user.is_authenticated %}
                             {{ user.username }}
                         {% else %}
-                            Profile
+                            Log in
                         {% endif %}
                     </a>
                     <div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown">

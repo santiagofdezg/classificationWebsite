@@ -52,6 +52,9 @@ body {
 /* Own styles */
 .container {
     color: #fff;
-
 }
 
+.nav-item a:hover {
+    background: #ebeced;
+    border-radius: 4px;
+}
