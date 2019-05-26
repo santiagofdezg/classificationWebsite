@@ -2,14 +2,22 @@
 
 from django import forms
 
+from .searchengine.search import Connection,Search
 
 time_intervals = {
-    1: 'Today', 2:'This week', 3:'This month', 4:'Last 3 months', 5:'This year'
+    1: 'Today', 2:'This week', 3:'This month', 4:'Last 3 months',
+    5:'This year'
 }
 maximum_articles = [10, 15, 20, 30, 40]
 
 
 class SearchForm(forms.Form):
+
+    # Get the lists of categories and sources
+    connection = Connection.get_connection()
+    search = Search(connection, 'news')
+    categories = search.get_all_categories()
+    sources = search.get_all_sources()
 
     searchBar = forms.CharField(
                     widget=forms.TextInput(attrs={
@@ -26,7 +34,7 @@ class SearchForm(forms.Form):
                         'id' : 'category',
                         'name' : 'category',
                     }),
-                    choices = [(1, "All"), (2, "Technology"),(3, "World")]
+                    choices = [(c,c) for c in categories]
                     )
     source = forms.ChoiceField(
                     widget=forms.Select(attrs={
@@ -34,7 +42,7 @@ class SearchForm(forms.Form):
                         'id' : 'source',
                         'name' : 'source',
                     }),
-                    choices = [(1, "All"), (2, "BBC")]
+                    choices = [(s,s) for s in sources]
                     )
     interval = forms.ChoiceField(
                     widget=forms.Select(attrs={

@@ -3,6 +3,7 @@ from django.shortcuts import render,redirect
 from .forms import (
     SearchForm
 )
+from .searchengine.search import *
 
 # Create your views here.
 
