@@ -5,8 +5,8 @@ from django import forms
 from .searchengine.search import Connection,Search
 
 time_intervals = {
-    1: 'Today', 2:'This week', 3:'This month', 4:'Last 3 months',
-    5:'This year'
+    'today': 'Today', 'week':'This week', 'month':'This month',
+    '3months':'Last 3 months', 'year':'This year'
 }
 maximum_articles = [10, 15, 20, 30, 40]
 
