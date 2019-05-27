@@ -1,9 +1,11 @@
 from django.shortcuts import render,redirect
+from elasticsearch import NotFoundError
+from django.views.defaults import page_not_found
 
 from .forms import (
     SearchForm
 )
-from .searchengine.search import Connection, Search
+from .searchengine.search import Connection, Search, Index
 
 # Create your views here.
 
@@ -35,6 +37,31 @@ def search_view(request):
                 context = {'form' : form}
         response = render(request, template, context)
 
+    else:
+        response = redirect('authentication:login')
+
+    return response
+
+
+def article_view(request, id):
+    if request.user.is_authenticated:
+        template = 'search/article_view.html'
+
+        connection = Connection.get_connection()
+        search = Search(connection, 'news')
+        try:
+            article = search.search_by_id(id)
+            context = {
+                'title': article.title,
+                'text': article.article,
+                'category': article.category,
+                'author': article.author,
+                'date': article.date,
+                'source': article.source
+            }
+            response = render(request, template, context)
+        except NotFoundError:
+            page_not_found()
     else:
         response = redirect('authentication:login')
 
