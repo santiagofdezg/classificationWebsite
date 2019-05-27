@@ -61,7 +61,7 @@ def article_view(request, id):
             }
             response = render(request, template, context)
         except NotFoundError:
-            page_not_found()
+            return page_not_found()
     else:
         response = redirect('authentication:login')
 
