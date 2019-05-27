@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="mx-2 my-4 text-dark">
+        <div class="pt-1">
+            <h3><u>Results</u></h3>
+        </div>
+        <div class="row align-items-center">
+            {% for a in articles %}
+                <div class="col-sm-3 my-3">
+                    <div class="card w-100" style="width: 18rem;">
+                        <h5 class="card-header">{{ a.title }}</h5>
+                        <div class="card-body">
+                            <p class="card-text">{{ a.article | truncatechars:80 }}</p>
+                            <h6 class="card-subtitle mb-2 text-muted">{{ a.category }}</h6>
+                            <div class="text-right"><a href="{{ a.meta.id }}" class="btn btn-primary">Read</a></div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

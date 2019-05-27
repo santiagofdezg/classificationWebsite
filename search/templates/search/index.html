@@ -45,11 +45,11 @@
                     {% endif %}
                 </div>
                 <div class="col-sm-2">
-                    <label for="{{ form.interval.id_for_label }}">Time interval:</label>
-                    {{ form.interval }}
-                    {% if form.interval.errors %}
+                    <label for="{{ form.timeInterval.id_for_label }}">Time interval:</label>
+                    {{ form.timeInterval }}
+                    {% if form.timeInterval.errors %}
                             <div class="alert alert-danger" role="alert">
-                                {{ form.interval.errors }}
+                                {{ form.timeInterval.errors }}
                             </div>
                     {% endif %}
                 </div>

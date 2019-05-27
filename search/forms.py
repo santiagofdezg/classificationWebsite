@@ -34,7 +34,7 @@ class SearchForm(forms.Form):
                         'id' : 'category',
                         'name' : 'category',
                     }),
-                    choices = [(c,c) for c in categories]
+                    choices = [('All','All')]+[(c,c) for c in categories]
                     )
     source = forms.ChoiceField(
                     widget=forms.Select(attrs={
@@ -42,9 +42,9 @@ class SearchForm(forms.Form):
                         'id' : 'source',
                         'name' : 'source',
                     }),
-                    choices = [(s,s) for s in sources]
+                    choices = [('All','All')]+[(s,s) for s in sources]
                     )
-    interval = forms.ChoiceField(
+    timeInterval = forms.ChoiceField(
                     widget=forms.Select(attrs={
                         'class' : 'form-control rounded-pill',
                         'name' : 'timeInterval',
