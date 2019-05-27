@@ -13,7 +13,7 @@
                     <div class="card w-100" style="width: 18rem;">
                         <h5 class="card-header">{{ a.title }}</h5>
                         <div class="card-body">
-                            <p class="card-text">{{ a.article | truncatechars:80 }}</p>
+                            <p class="card-text">{{ a.subtitle }}</p>
                             <h6 class="card-subtitle mb-2 text-muted">{{ a.category }}</h6>
                             <div class="text-right"><a href="{{ a.meta.id }}" class="btn btn-primary">Read</a></div>
                         </div>

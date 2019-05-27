@@ -53,6 +53,7 @@ def article_view(request, id):
             article = search.search_by_id(id)
             context = {
                 'title': article.title,
+                'subtitle': article.subtitle,
                 'text': article.article,
                 'category': article.category,
                 'author': article.author,
