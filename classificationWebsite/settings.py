@@ -26,7 +26,8 @@ SECRET_KEY = ')wk7+@e+w4bd%7(ad+%w$p*+q+ttvy8drrs@$!-fq2==pbotvh'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'textclassifier.online'
+    'textclassifier.online',
+    'localhost'
 ]
 
 
