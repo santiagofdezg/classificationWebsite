@@ -156,7 +156,7 @@ Then the server is running in **localhost:8000**. You will need a **user** to us
 
 `password: d73he-9s1_`
 
-In the case you do not want to install everything locally, you can also test the classification application in my server. Just visit [https://textclassifier.online](https://textclassifier.online) and log in with the user I mentioned earlier.
+In the case you do not want to install everything locally, you can also test the classification application in my server. Just visit [https://textclassifier.online](https://textclassifier.online) and log in with the user I mentioned earlier. That website doesn't have the searchengine module.
 
 
 ## Test all possible models
