@@ -5,7 +5,7 @@ from django.views.defaults import page_not_found
 from .forms import (
     SearchForm
 )
-from .searchengine.search import Connection, Search, Index
+from .searchengine.searchengine.search import Connection, Search, Index
 
 # Create your views here.
 

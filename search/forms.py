@@ -2,7 +2,7 @@
 
 from django import forms
 
-from .searchengine.search import Connection,Search
+from .searchengine.searchengine.search import Connection,Search
 
 time_intervals = {
     'today': 'Today', 'week':'This week', 'month':'This month',
